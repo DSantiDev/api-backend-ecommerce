@@ -5,8 +5,15 @@
   "scripts": {
     "dev": "node --watch ./src/index.js"
   },
-  "keywords": [ "Express", "Mongoose", "bcrypt"],
+  "keywords": [
+    "Express",
+    "Mongoose",
+    "bcrypt"
+  ],
   "author": "David Santiago Rodriguez Moreno <davidsantiagor123@gmail.com>",
   "license": "ISC",
-  "description": "backend de una API para un E-Commerce"
+  "description": "backend de una API para un E-Commerce",
+  "dependencies": {
+    "express": "^4.20.0"
+  }
 }
