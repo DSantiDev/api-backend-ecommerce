@@ -4,6 +4,15 @@ const port = process.env.PORT || 3000;
 
 
 /** Endpoints de nuestro servidor */
+
+//http://localhost:3000
+app.get('/', (req, res) => {
+    res.json({
+        ok: true,
+        msg: 'Obtiene el home'
+    });
+});
+
 //http://localhost:3000/api/products
 app.use( '/api/products', require( './routes/products.routes' ));
 
