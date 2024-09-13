@@ -1,22 +1,20 @@
-const express = require('express');
+const express = require( 'express' );
+const dbConection = require('./config/mongo.config');
 const app = express();
-const port = process.env.PORT || 3000;
+
+/** Establecer la conexion a MongoDB usando la config */
+
+dbConection()
+
+/** EndPoints de nuestro servidor */
+
+// http://localhost:3000/api/products
+app.use( '/api/products', require( './routes/product.routes' ) );
 
 
-/** Endpoints de nuestro servidor */
-
-//http://localhost:3000
-app.get('/', (req, res) => {
-    res.json({
-        ok: true,
-        msg: 'Obtiene el home'
-    });
+/** Lanzamos el servidor en puerto indicado 
+ * http://localhost:3000
+*/
+app.listen( 3000, function() {
+    console.log( 'Servidor corriendo en puerto 3000' );
 });
-
-//http://localhost:3000/api/products
-app.use( '/api/products', require( './routes/products.routes' ));
-
-
-//Inciador del servidor en el puerto indicado, http://localhost:3000
-app.listen(port, () => console.log(`Servidor corriendo en el puerto http://localhost:${port}`));
-
