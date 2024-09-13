@@ -1,8 +1,8 @@
-const mongoose = require( 'mongoose');
+const { connect } = require( 'mongoose');
 
 async function  dbConection() {
     try {
-        await mongoose.connect('mongodb://localhost:27017', {});  
+        await connect('mongodb://localhost:27017', {});  
         console.log( 'Base de datos inicializada correctamente' )  
     } catch (error) {
         console.error( error );
