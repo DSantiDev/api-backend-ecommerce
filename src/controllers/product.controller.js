@@ -1,16 +1,36 @@
+const { dbInsertProduct } = require('../services/product.service');
+
+
 // Muestra todos los productos registrados
 function getProducts( req, res ) {
+   
+
     res.json({
         ok: true,
         msg: 'Obtener todos los productos'
     });
 }
 
-function createProduct( req, res ) {
-    res.json({
-        ok: true,
-        msg: 'Crea un producto'
-    });
+async function createProduct( req, res ) {
+    const inputData = req.body;
+
+    try {
+        const data = await dbInsertProduct( inputData );
+        console.log( data );            // Testing
+
+        res.json({
+            ok: true,
+            msg: 'Crea un producto',
+            data            // ECMAScript data: data ---> data
+        });
+    } catch (error) {
+        console.error( error );
+        res.json({
+            ok: false,
+            msg: 'Error al crear un producto',
+        });
+    }
+    
 }
 
 function updateProductPut( req, res ) {

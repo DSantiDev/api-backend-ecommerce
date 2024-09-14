@@ -10,7 +10,7 @@
     "mongoose",
     "bcrypt"
   ],
-  "author": "David Santiago Rodriguez Moreno <davidsantiagor123@gmail.com>",
+  "author": "Juan Carlos Jiménez Gutiérrez <jcjimenez29@misena.edu.co>",
   "license": "ISC",
   "description": "BackEnd: API para un E-Commerce",
   "dependencies": {
