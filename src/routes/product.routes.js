@@ -10,7 +10,7 @@ router.get( '/', getProducts );             // Obtiene todos los productos
 router.get( '/:id', getProductById );       // Obtiene un producto por ID
 router.post( '/', createProduct  );         // Crear un producto
 router.put( '/', updateProductPut );        // Actualiza todos los campos de un producto
-router.patch( '/', updateProductPatch );    // Actualiza parcialmente los campos de un producto
+router.patch( '/:id', updateProductPatch );    // Actualiza parcialmente los campos de un producto
 router.delete( '/:id', deleteProduct );        // Elimina un producto
 
 

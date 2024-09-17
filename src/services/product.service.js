@@ -17,9 +17,19 @@ const dbDeleteProductById = async ( id ) => {
     return await ProductModel.findByIdAndDelete( id );
 };
 
+const dbUptadeProductById = async ( _id, updateProductById ) => {
+    return await ProductModel.findByIdAndUpdate(
+        { _id }, 
+        updateProductById,
+        { new: true }
+    );
+};
+
+
 module.exports ={
     dbGetProducts,
     dbGetProductById,
     dbInsertProduct,
-    dbDeleteProductById
+    dbDeleteProductById,
+    dbUptadeProductById
 };
