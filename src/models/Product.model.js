@@ -29,6 +29,8 @@ const ProductSchema = new Schema({
         type: Boolean,
         default: true
     }
+}, {
+    timestamps: true
 });
 
 /** Establecemos un vínculo entre la estructura de datos y nombre que deseamos darle a coleccion en la base de datos */
