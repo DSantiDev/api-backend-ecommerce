@@ -33,7 +33,7 @@ async function getProductById( req, res ) {
                 msg: 'Producto no econtrado'
             });
         }
-
+        
         res.status(226).json({
             ok: true,
             data           
