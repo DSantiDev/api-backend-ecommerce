@@ -30,7 +30,7 @@ const ProductSchema = new Schema({
         default: true
     }
 }, {
-    timestamps: true
+    timestamps: true        // Agrega campos de fecha: creacion y actualizacion del documento
 });
 
 /** Establecemos un vínculo entre la estructura de datos y nombre que deseamos darle a coleccion en la base de datos */

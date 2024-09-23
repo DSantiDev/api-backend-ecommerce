@@ -1,33 +1,32 @@
-const { Schema, model } = require( 'mongoose' );
+const mongoose = require( 'mongoose' );
 
-const UserSchema = new Schema({
-    name: {                 
-        type: String,       
+const UserSchema = new mongoose.Schema({
+    name: {
+        type: String,
         required: true
-    },  
-    username: {                
-        type: String, 
-        required: true,
-        unique: true
     },
-    password: {
+    /** username: [ ] # identificacion, [ ] alias, [x] correo electronico */
+    username: {
         type: String,
         required: true,
+        unique: true
+    }, 
+    password: {
+        type: String,
+        required: true
     },
     role: {
         type: String,
         default: 'registered'
     }
-
 }, {
-    timestamps: true
+    timestamps: true    // Agrega campos de fecha: creacion y actualizacion del documento
 });
 
+const UserModel = mongoose.model(
+    'users',            // Nombre de la coleccion
+    UserSchema          // Estructura de datos de nuestro modelo
+); 
 
-const UserModel = model( 
-    'users',    
-    UserSchema
-);
 
-
-module.exports = UserModel;      
+module.exports = UserModel;
